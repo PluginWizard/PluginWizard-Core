@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * A custom PaperMC-compatible argument type that reads a single token of any
- * non-whitespace characters (accepts special characters like '&', '#', etc.)
+ * non-whitespace characters
  */
 public class SingleTokenArgumentType implements CustomArgumentType.Converted<String, String> {
 

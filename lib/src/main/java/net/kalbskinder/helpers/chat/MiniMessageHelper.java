@@ -10,7 +10,7 @@ public class MiniMessageHelper {
     /**
      * Parses a formatted string into a Component.
      *
-     * @param message The message to format (&a or <green> etc.)
+     * @param message The message to format
      * @return The parsed Component
      */
     public Component parse(String message) {
