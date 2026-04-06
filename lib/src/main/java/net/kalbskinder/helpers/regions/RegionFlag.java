@@ -1,0 +1,20 @@
+package net.kalbskinder.helpers.regions;
+
+public enum RegionFlag {
+    PVP,
+    BREAK_BLOCKS,
+    DROP_ITEMS,
+    PICKUP_ITEMS,
+    FIRE_DAMAGE,
+    FALL_DAMAGE,
+    SUFFOCATION_DAMAGE,
+    DROWNING_DAMAGE,
+    POISON_WITHER_DAMAGE,
+    FLIGHT,
+    HUNGER,
+    BLOCK_INTERACTION,
+    NATURAL_REGENERATION,
+    KILL_DEATH_MESSAGES,
+    INSTANT_RESPAWN,
+    KEEP_INVENTORY;
+}
