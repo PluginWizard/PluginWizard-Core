@@ -2,9 +2,12 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id("xyz.jpenilla.run-paper") version "2.3.1"
+    id 'signing'
+    id 'com.gradleup.nmcp' version '0.0.9'
 }
 
 group = 'net.kalbskinder'
+version = '1.0.0'
 
 base {
     archivesName = 'pluginwizard-core'
@@ -68,6 +71,7 @@ java {
         languageVersion = JavaLanguageVersion.of(21)
     }
     withSourcesJar()
+    withJavadocJar()
 }
 
 publishing {
@@ -75,6 +79,29 @@ publishing {
         create('mavenJava', MavenPublication) {
             from components.java
             artifactId = 'pluginwizard-core'
+            pom {
+                name = 'PluginWizard Core'
+                description = 'Utility library for PaperMC server plugins'
+                url = 'https://github.com/PluginWizard/PluginWizard-Core'
+                licenses {
+                    license {
+                        name = 'Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'kalbskinder'
+                        name = 'Kalbskinder'
+                        url = 'https://github.com/kalbskinder'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/PluginWizard/PluginWizard-Core.git'
+                    developerConnection = 'scm:git:ssh://github.com/PluginWizard/PluginWizard-Core.git'
+                    url = 'https://github.com/PluginWizard/PluginWizard-Core'
+                }
+            }
         }
     }
     repositories {
@@ -88,3 +115,23 @@ publishing {
         }
     }
 }
+
+signing {
+    def signingKey = providers.environmentVariable('SIGNING_KEY').orNull
+    def signingPassword = providers.environmentVariable('SIGNING_PASSWORD').orNull
+    if (signingKey && signingPassword) {
+        useInMemoryPgpKeys(signingKey, signingPassword)
+    } else {
+        useGpgCmd()
+    }
+    sign publishing.publications.mavenJava
+}
+
+nmcp {
+    publish('mavenJava') {
+        username = providers.environmentVariable('CENTRAL_TOKEN_USERNAME').orNull ?: ''
+        password = providers.environmentVariable('CENTRAL_TOKEN_PASSWORD').orNull ?: ''
+        publicationType = 'AUTOMATIC'
+    }
+}
+
