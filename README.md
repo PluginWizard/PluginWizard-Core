@@ -1,5 +1,5 @@
 # PluginWizard-Core
-PluginWizard Java utility classes that power plugins created with PluginWizard
+Collection of Java utility classes that power plugins created with PluginWizard
 
 <a href="https://github.com/PluginWizard/PluginWizard-Core/actions/">
   <img alt="Build Status" src="https://github.com/PluginWizard/PluginWizard-Core/actions/workflows/publish.yml/badge.svg" />
