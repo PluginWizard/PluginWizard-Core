@@ -1,6 +1,5 @@
 package net.kalbskinder.helpers;
 
-import lombok.RequiredArgsConstructor;
 import net.kalbskinder.helpers.actions.*;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
@@ -8,9 +7,8 @@ import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
 
-@RequiredArgsConstructor
 public class Helpers {
-    private final RegionManager regionManager;
+    private final RegionManager regionManager = new RegionManager();
 
     // actions
     public static MessageHelper messageHelper;

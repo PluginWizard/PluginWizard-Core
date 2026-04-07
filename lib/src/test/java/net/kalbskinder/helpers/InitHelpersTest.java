@@ -31,9 +31,7 @@ public class InitHelpersTest {
         Assert.assertNotNull(server);
         Assert.assertNotNull(plugin);
 
-        RegionManager regionManager = new RegionManager();
-
-        Helpers helpers = new Helpers(regionManager);
+        Helpers helpers = new Helpers();
         helpers.initialize();
 
         Assert.assertNotNull(Helpers.messageHelper);
