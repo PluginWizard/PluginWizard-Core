@@ -27,8 +27,8 @@ implementation("net.kalbskinder:pluginwizard-core:1.0.0")
 ## Using PluginWizard Core Utilities
 
 **Features**
-- [Regions]('')
-- Creating Commands
+- [Regions]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions')
+- [Creating Commands]('')
 - Event Registration
 - Location Utilities
 - Item Utilities
@@ -52,4 +52,31 @@ myRegion.onRegionEnter(regionEvent -> {
   Helpers.messageHelper.sendMessage(regionEvent.getPlayer(), "<green><bold>Hello!");
 });
 Helpers.regionHelper.addRegion(myRegion); // Update region entry in the manager
+```
+
+### Creating Commands
+
+```java
+private final List<CommandHelper> commands = new ArrayList<>(); // Store commands to register later
+
+// Command with a string argument 'x'
+// Command '/mycommand <x>'
+commands.add(CommandHelper.create("mycommand").stringArg("x")
+  .executes(ctx -> {
+    Helpers.titleHelper.displayTitle(ctx.getSender(), ctx.getString("x"), 0, 1, 0); // will be executed if the command is triggered
+  })
+);
+
+// Command with a subcommand, no arguments
+// Command '/mycommand help'
+commands.add(CommandHelper.create("myplugin").sub("help")
+  .executes(ctx -> {
+    Bukkit.getServer().getOnlinePlayers().forEach(player -> {
+      player.sendMessage(Helpers.miniMessageHelper.parse("Help subcommand executed")) // subcommand code execution
+    });
+  }).end()
+  .executes(ctx -> {}) // command code execution
+);
+
+commandManager.registerCommands(commands); // Register all commands
 ```
