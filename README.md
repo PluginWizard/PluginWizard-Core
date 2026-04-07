@@ -27,10 +27,17 @@ implementation("net.kalbskinder:pluginwizard-core:1.0.0")
 ## Using PluginWizard Core Utilities
 
 **Features**
-- [Regions]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions')
-- [Creating Commands]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands')
+- [Regions](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions)
+- [Creating Commands](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands)
+- [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
+- Item Utilities
+- Title & Message Utilities
+- [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
+- Sound Utilities
+- Teleportation Utilities
+- Player Inventory Utilities
 - Event Registration (Coming with 1.2.0)
-- [Location Utilities]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities')
+- Database Utilities (Coming with 1.4.0)
 
 ### Regions
 
@@ -86,4 +93,16 @@ This utility makes it easy to convert locations to strings to store them in your
 ```java
 Location location = Helpers.locationHelper.stringToLocation("world,0,64,0"); // convert a String to Location
 String locationString = Helpers.locationHelper.locationToString(location); // convert a Location to a String
+```
+
+### MiniMessage Utilities
+
+Parse any string (containing `&c` or `<red>` color formats) to a valid text component.
+
+> [!NOTE]
+> Easy usage of [Sprites](https://www.gamergeeks.net/apps/minecraft/list-of-atlas-sprites) in text messages is expected soon.
+>
+
+```java
+Component textComponent = Helpers.miniMessageHelper.parse("<red>Hello &r&l&aWorld!");
 ```
