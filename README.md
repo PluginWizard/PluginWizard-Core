@@ -28,8 +28,8 @@ implementation("net.kalbskinder:pluginwizard-core:1.0.0")
 
 **Features**
 - [Regions]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions')
-- [Creating Commands]('')
-- Event Registration
+- [Creating Commands]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands')
+- Event Registration (Coming with 1.2.0)
 - Location Utilities
 - Item Utilities
 - Title Utilities
@@ -79,4 +79,13 @@ commands.add(CommandHelper.create("myplugin").sub("help")
 );
 
 commandManager.registerCommands(commands); // Register all commands
+```
+
+### Location Utilities
+
+This utility makes it easy to convert locations to strings to store them in your database
+
+```java
+Location location = Helpers.locationHelper.stringToLocation("world,0,64,0"); // convert a String to Location
+String locationString = Helpers.locationHelper.locationToString(location); // convert a Location to a String
 ```
