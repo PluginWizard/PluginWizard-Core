@@ -30,9 +30,7 @@ implementation("net.kalbskinder:pluginwizard-core:1.0.0")
 - [Regions]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions')
 - [Creating Commands]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands')
 - Event Registration (Coming with 1.2.0)
-- Location Utilities
-- Item Utilities
-- Title Utilities
+- [Location Utilities]('https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities')
 
 ### Regions
 
