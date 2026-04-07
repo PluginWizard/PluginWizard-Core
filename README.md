@@ -24,6 +24,18 @@ Collection of Java utility classes that power plugins created with PluginWizard
 implementation("net.kalbskinder:pluginwizard-core:1.0.0")
 ```
 
+## Enabling PluginWizard-Core in your Plugin
+
+```java
+private final RegionManager regionManager = new RegionManager(); // Keep track of registered regions
+
+@Override
+public void onEnable() {
+  Helpers helpers = new Helpers(regionManager);
+  helpers.initialize();
+}
+```
+
 ## Using PluginWizard Core Utilities
 
 **Features**
