@@ -119,7 +119,7 @@ String locationString = Helpers.locationHelper.locationToString(location); // co
 ### Sprite Utilities
 
 Create texts with custom sprites.\
-Supported sprites: [javadoc - helpers.sprites.types]()
+Supported sprites: [javadoc - helpers.sprites.types](https://javadoc.io/doc/net.kalbskinder/pluginwizard-core/latest/net/kalbskinder/helpers/sprites/types/package-summary.html)
 
 ```java
 String text = Sprite.of(BlockSprite.DIAMOND_BLOCK) + " Hello World!";
