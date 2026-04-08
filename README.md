@@ -25,14 +25,14 @@
 <dependency>
     <groupId>net.kalbskinder</groupId>
     <artifactId>pluginwizard-core</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
 ## Adding dependency for Gradle
 
 ```gradle
-implementation("net.kalbskinder:pluginwizard-core:1.0.0")
+implementation("net.kalbskinder:pluginwizard-core:1.1.0")
 ```
 
 ## Enabling PluginWizard-Core in your Plugin
@@ -52,7 +52,7 @@ public void onEnable() {
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - Item Utilities
 - Title & Message Utilities
-- [Sprite Utilities]()
+- [Sprite Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#sprite-utilities)
 - [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
 - Sound Utilities
 - Teleportation Utilities
