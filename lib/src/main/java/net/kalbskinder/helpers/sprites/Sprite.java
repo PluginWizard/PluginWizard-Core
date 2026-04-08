@@ -1,14 +1,12 @@
 package net.kalbskinder.helpers.sprites;
 
-import lombok.Data;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
 import net.kalbskinder.helpers.sprites.types.*;
 import net.kyori.adventure.text.Component;
 
 import java.util.UUID;
 
-@Data
-public class Sprite {
+public final class Sprite {
     private Sprite() {
         /* This utility class should not be instantiated */
     }
@@ -93,7 +91,7 @@ public class Sprite {
     }
 
     /**
-     * Parses a sprite string into a TextComponent.
+     * Parses a sprite string into a Component.
      * @param string MiniMessage formatted string
      */
     public static Component parse(String string) {

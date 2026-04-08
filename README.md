@@ -122,7 +122,7 @@ Create texts with custom sprites.\
 Supported sprites: [javadoc - helpers.sprites.types]()
 
 ```java
-String text = Sprite.of(BlockSprite.DIAMOOND_BLOCK) + " Hello World!";
+String text = Sprite.of(BlockSprite.DIAMOND_BLOCK) + " Hello World!";
 Component textComponent =  Sprite.parse(text);
 ```
 

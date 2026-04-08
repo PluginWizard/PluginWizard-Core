@@ -6,8 +6,6 @@ import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
-import net.kalbskinder.helpers.sprites.Sprite;
-import net.kalbskinder.helpers.sprites.types.BedSprite;
 
 public class Helpers {
     private Helpers() {
