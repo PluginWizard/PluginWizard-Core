@@ -142,13 +142,8 @@ signing {
         } else {
             useInMemoryPgpKeys(signingKey, signingPassword)
         }
-    } else {
-        if (providers.environmentVariable('CI').orNull == 'true') {
-            throw new GradleException('Missing SIGNING_KEY or SIGNING_PASSWORD in CI for publication signing')
-        }
-        useGpgCmd()
+        sign publishing.publications.mavenJava
     }
-    sign publishing.publications.mavenJava
 }
 
 nmcp {
