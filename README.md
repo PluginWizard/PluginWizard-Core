@@ -1,7 +1,4 @@
 # PluginWizard-Core
-Collection of Java utility classes that make plugin development easier.
-
-❤️ Powers plugins created with [PluginWizard](https://github.com/PluginWizard/PluginWizard)
 
 <a href="https://github.com/PluginWizard/PluginWizard-Core/actions/">
   <img alt="Build Status" src="https://github.com/PluginWizard/PluginWizard-Core/actions/workflows/publish.yml/badge.svg" />
@@ -12,6 +9,11 @@ Collection of Java utility classes that make plugin development easier.
 <a href="https://javadoc.io/doc/net.kalbskinder/pluginwizard-core/latest/index.html">
   <img alt="Javadoc" src="https://javadoc.io/badge2/net.kalbskinder/pluginwizard-core/javadoc.svg" />
 </a>
+
+Collection of Java utility classes that make plugin development easier.
+
+❤️ Powers plugins created with [PluginWizard](https://github.com/PluginWizard/PluginWizard)
+
 
 ## Adding dependency for Maven
 
