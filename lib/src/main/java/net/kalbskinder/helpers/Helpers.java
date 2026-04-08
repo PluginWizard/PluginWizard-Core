@@ -6,9 +6,13 @@ import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
+import net.kalbskinder.helpers.sprites.Sprite;
+import net.kalbskinder.helpers.sprites.types.BedSprite;
 
 public class Helpers {
-    private final RegionManager regionManager = new RegionManager();
+    private Helpers() {
+        /* This utility class should not be instantiated */
+    }
 
     // actions
     public static MessageHelper messageHelper;
@@ -25,7 +29,8 @@ public class Helpers {
     // regions
     public static RegionHelper regionHelper;
 
-    public void initialize() {
+    public static void initialize() {
+        RegionManager regionManager = new RegionManager();
         miniMessageHelper = new MiniMessageHelper();
         messageHelper = new MessageHelper(miniMessageHelper);
         playerItemHelper = new PlayerItemHelper();

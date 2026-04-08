@@ -1124,6 +1124,6 @@ public enum BlockSprite {
     }
 
     public String atlas() {
-        return null;
+        return "blocks";
     }
 }

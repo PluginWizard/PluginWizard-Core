@@ -7,6 +7,9 @@ Collection of Java utility classes that power plugins created with PluginWizard
 <a href="https://central.sonatype.com/artifact/net.kalbskinder/pluginwizard-core">
   <img alt="Maven Central" src="https://img.shields.io/maven-central/v/net.kalbskinder/pluginwizard-core?color=1bcc94&logo=apache-maven" />
 </a>
+<a href="https://javadoc.io/doc/net.kalbskinder/pluginwizard-core/latest/index.html">
+  <img alt="Javadoc" src="https://javadoc.io/badge2/net.kalbskinder/pluginwizard-core/javadoc.svg" />
+</a>
 
 ## Adding dependency for Maven
 
@@ -29,8 +32,7 @@ implementation("net.kalbskinder:pluginwizard-core:1.0.0")
 ```java
 @Override
 public void onEnable() {
-  Helpers helpers = new Helpers();
-  helpers.initialize();
+  Helpers.initialize();
 }
 ```
 
@@ -42,6 +44,7 @@ public void onEnable() {
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - Item Utilities
 - Title & Message Utilities
+- [Sprite Utilities]()
 - [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
 - Sound Utilities
 - Teleportation Utilities
@@ -105,13 +108,19 @@ Location location = Helpers.locationHelper.stringToLocation("world,0,64,0"); // 
 String locationString = Helpers.locationHelper.locationToString(location); // convert a Location to a String
 ```
 
+### Sprite Utilities
+
+Create texts with custom sprites.
+Supported sprites: [javadoc - helpers.sprites.types]()
+
+```java
+String text = Sprite.of(BlockSprite.DIAMOOND_BLOCK) + " Hello World!";
+Component textComponent =  Sprite.parse(text);
+```
+
 ### MiniMessage Utilities
 
 Parse any string (containing `&c` or `<red>` color formats) to a valid text component.
-
-> [!NOTE]
-> Easy usage of [Sprites](https://www.gamergeeks.net/apps/minecraft/list-of-atlas-sprites) in text messages is expected soon.
->
 
 ```java
 Component textComponent = Helpers.miniMessageHelper.parse("<red>Hello &r&l&aWorld!");

@@ -31,8 +31,7 @@ public class InitHelpersTest {
         Assert.assertNotNull(server);
         Assert.assertNotNull(plugin);
 
-        Helpers helpers = new Helpers();
-        helpers.initialize();
+        Helpers.initialize();
 
         Assert.assertNotNull(Helpers.messageHelper);
         Assert.assertNotNull(Helpers.itemHelper);
