@@ -1,18 +1,22 @@
-# PluginWizard-Core
+<h1 align="center">PluginWizard-Core</h1>
 
-<a href="https://github.com/PluginWizard/PluginWizard-Core/actions/">
-  <img alt="Build Status" src="https://github.com/PluginWizard/PluginWizard-Core/actions/workflows/publish.yml/badge.svg" />
-</a>
-<a href="https://central.sonatype.com/artifact/net.kalbskinder/pluginwizard-core">
-  <img alt="Maven Central" src="https://img.shields.io/maven-central/v/net.kalbskinder/pluginwizard-core?color=1bcc94&logo=apache-maven" />
-</a>
-<a href="https://javadoc.io/doc/net.kalbskinder/pluginwizard-core/latest/index.html">
-  <img alt="Javadoc" src="https://javadoc.io/badge2/net.kalbskinder/pluginwizard-core/javadoc.svg" />
-</a>
+<p align="center">
+    <a href="https://github.com/PluginWizard/PluginWizard-Core/actions/">
+        <img alt="Build Status" src="https://github.com/PluginWizard/PluginWizard-Core/actions/workflows/publish.yml/badge.svg" />
+    </a>
+    <a href="https://central.sonatype.com/artifact/net.kalbskinder/pluginwizard-core">
+      <img alt="Maven Central" src="https://img.shields.io/maven-central/v/net.kalbskinder/pluginwizard-core?color=1bcc94&logo=apache-maven" />
+    </a>
+    <a href="https://javadoc.io/doc/net.kalbskinder/pluginwizard-core/latest/index.html">
+      <img alt="Javadoc" src="https://javadoc.io/badge2/net.kalbskinder/pluginwizard-core/javadoc.svg" />
+    </a>
+</p>
 
-Collection of Java utility classes that make plugin development easier.
 
-❤️ Powers plugins created with [PluginWizard](https://github.com/PluginWizard/PluginWizard)
+<p align="center">
+    Collection of Java utility classes that make plugin development easier.<br>
+    ❤️ Powers plugins created with <a href="https://github.com/PluginWizard/PluginWizard">PluginWizard</a>
+</p>
 
 
 ## Adding dependency for Maven
