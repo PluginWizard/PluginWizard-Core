@@ -1,5 +1,7 @@
 # PluginWizard-Core
-Collection of Java utility classes that power plugins created with PluginWizard
+Collection of Java utility classes that make plugin development easier.
+
+❤️ Powers plugins created with [PluginWizard](https://github.com/PluginWizard/PluginWizard)
 
 <a href="https://github.com/PluginWizard/PluginWizard-Core/actions/">
   <img alt="Build Status" src="https://github.com/PluginWizard/PluginWizard-Core/actions/workflows/publish.yml/badge.svg" />
@@ -110,7 +112,7 @@ String locationString = Helpers.locationHelper.locationToString(location); // co
 
 ### Sprite Utilities
 
-Create texts with custom sprites.
+Create texts with custom sprites.\
 Supported sprites: [javadoc - helpers.sprites.types]()
 
 ```java
