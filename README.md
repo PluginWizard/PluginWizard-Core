@@ -50,7 +50,7 @@ public void onEnable() {
 - [Regions](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions)
 - [Creating Commands](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands)
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
-- [Item Utilities]
+- [Item Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#item-utilities)
 - Title & Message Utilities
 - [Sprite Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#sprite-utilities)
 - [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
