@@ -16,6 +16,10 @@ import java.util.stream.Collectors;
 public class ItemHelper {
     private final MiniMessageHelper miniMessageUtils;
 
+    public ItemBuilder newItem() {
+        return new ItemBuilder(miniMessageUtils);
+    }
+
     /*
      * Converts a string representation of an item to an ItemStack.
      * @param item The string representation of the item (e.g., "minecraft:diamond_sword").

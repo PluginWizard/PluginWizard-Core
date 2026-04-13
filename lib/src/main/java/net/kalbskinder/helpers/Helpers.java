@@ -1,5 +1,6 @@
 package net.kalbskinder.helpers;
 
+import lombok.NoArgsConstructor;
 import net.kalbskinder.helpers.actions.*;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
@@ -7,10 +8,8 @@ import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
 
+@NoArgsConstructor
 public class Helpers {
-    private Helpers() {
-        /* This utility class should not be instantiated */
-    }
 
     // actions
     public static MessageHelper messageHelper;

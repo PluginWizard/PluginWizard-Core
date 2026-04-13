@@ -25,7 +25,7 @@
 <dependency>
     <groupId>net.kalbskinder</groupId>
     <artifactId>pluginwizard-core</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -40,7 +40,7 @@ implementation("net.kalbskinder:pluginwizard-core:1.1.0")
 ```java
 @Override
 public void onEnable() {
-  Helpers.initialize();
+    Helpers.initialize();
 }
 ```
 
@@ -50,19 +50,19 @@ public void onEnable() {
 - [Regions](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions)
 - [Creating Commands](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands)
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
-- Item Utilities
+- [Item Utilities]
 - Title & Message Utilities
 - [Sprite Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#sprite-utilities)
 - [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
 - Sound Utilities
 - Teleportation Utilities
 - Player Inventory Utilities
-- Event Registration (Coming with 1.2.0)
+- Event Registration (Coming with 1.3.0)
 - Database Utilities (Coming with 1.4.0)
 
 ### Regions
 
-You can easialy register regions with custom flags (gamerules) and entry/exit events
+You can easily register regions with custom flags (game rules) and entry/exit events
 
 **Registering a new Region**
 
@@ -75,7 +75,7 @@ Helpers.regionHelper.addRegion(myRegion);
 
 ```java
 myRegion.onRegionEnter(regionEvent -> {
-  Helpers.messageHelper.sendMessage(regionEvent.getPlayer(), "<green><bold>Hello!");
+    Helpers.messageHelper.sendMessage(regionEvent.getPlayer(), "<green><bold>Hello!");
 });
 Helpers.regionHelper.addRegion(myRegion); // Update region entry in the manager
 ```
@@ -88,20 +88,20 @@ private final List<CommandHelper> commands = new ArrayList<>(); // Store command
 // Command with a string argument 'x'
 // Command '/mycommand <x>'
 commands.add(CommandHelper.create("mycommand").stringArg("x")
-  .executes(ctx -> {
-    Helpers.titleHelper.displayTitle(ctx.getSender(), ctx.getString("x"), 0, 1, 0); // will be executed if the command is triggered
-  })
-);
+    .executes(ctx -> {
+        Helpers.titleHelper.displayTitle(ctx.getSender(), ctx.getString("x"), 0, 1, 0); // will be executed if the command is triggered
+    })
+    );
 
 // Command with a subcommand, no arguments
 // Command '/mycommand help'
 commands.add(CommandHelper.create("myplugin").sub("help")
-  .executes(ctx -> {
-    Bukkit.getServer().getOnlinePlayers().forEach(player -> {
-      player.sendMessage(Helpers.miniMessageHelper.parse("Help subcommand executed")) // subcommand code execution
-    });
-  }).end()
-  .executes(ctx -> {}) // command code execution
+    .executes(ctx -> {
+        Bukkit.getServer().getOnlinePlayers().forEach(player -> {
+        player.sendMessage(Helpers.miniMessageHelper.parse("Help subcommand executed")) // subcommand code execution
+        });
+    }).end()
+    .executes(ctx -> {}) // command code execution
 );
 
 commandManager.registerCommands(commands); // Register all commands
@@ -114,6 +114,23 @@ This utility makes it easy to convert locations to strings to store them in your
 ```java
 Location location = Helpers.locationHelper.stringToLocation("world,0,64,0"); // convert a String to Location
 String locationString = Helpers.locationHelper.locationToString(location); // convert a Location to a String
+```
+
+### Item Utilities
+
+Create custom items with custom names and lore.
+
+```java
+    ItemStack item = itemHelper.newItem()
+        .material(Material.DIAMOND_SWORD)
+        .amount(2)
+        .enchant(Enchantment.UNBREAKING, 3)
+        .lore(Arrays.asList("line1", null, "line2"))
+        .itemFlag(ItemFlag.HIDE_ATTRIBUTES)
+        .build();
+
+    // Place the item into the first hotbar slot of a player
+    Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
 ```
 
 ### Sprite Utilities
