@@ -32,7 +32,7 @@
 ## Adding dependency for Gradle
 
 ```gradle
-implementation("net.kalbskinder:pluginwizard-core:1.1.0")
+implementation("net.kalbskinder:pluginwizard-core:1.2.0")
 ```
 
 ## Enabling PluginWizard-Core in your Plugin
