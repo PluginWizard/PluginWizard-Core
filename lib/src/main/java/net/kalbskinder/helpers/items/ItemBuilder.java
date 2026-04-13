@@ -13,20 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Fluent builder for {@link ItemStack}.
- *
- * <pre>
- * ItemStack item = itemHelper.newItem()
- *     .name("<green>Custom item name")
- *     .material(Material.DIAMOND_SWORD)
- *     .amount(1) // optional, defaults to 1
- *     .enchants() // optional helper for readability
- *     .enchant(Enchantment.UNBREAKING, 3)
- *     .lore(List.of("<gray>Custom item lore line 1", "<gray>Custom item lore line 2")) // optional
- *     .build();
- * </pre>
- */
 public class ItemBuilder {
     private final MiniMessageHelper miniMessageHelper;
 
