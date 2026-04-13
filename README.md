@@ -91,7 +91,7 @@ commands.add(CommandHelper.create("mycommand").stringArg("x")
     .executes(ctx -> {
         Helpers.titleHelper.displayTitle(ctx.getSender(), ctx.getString("x"), 0, 1, 0); // will be executed if the command is triggered
     })
-    );
+);
 
 // Command with a subcommand, no arguments
 // Command '/mycommand help'
