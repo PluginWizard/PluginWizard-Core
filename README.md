@@ -15,7 +15,7 @@
 
 <p align="center">
     Collection of Java utility classes that make plugin development easier.<br>
-    ❤️ Powers plugins created with <a href="https://github.com/PluginWizard/PluginWizard">PluginWizard</a>
+    ❤️ Powers plugins created with <a href="https://github.com/PluginWizard/PluginWizard">PluginWizard</a> (Coming summer 2026 🌴)
 </p>
 
 
