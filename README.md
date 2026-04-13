@@ -122,6 +122,7 @@ Create custom items with custom names and lore.
 
 ```java
     ItemStack item = itemHelper.newItem()
+        .name("<blue><bold>My Custom Item")
         .material(Material.DIAMOND_SWORD)
         .amount(2)
         .enchant(Enchantment.UNBREAKING, 3)
