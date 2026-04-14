@@ -49,7 +49,7 @@ public void onEnable() {
 **Features**
 - [Regions](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions)
 - [Creating Commands](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands)
-- [Event Listeners](ttps://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#event-listeners)
+- [Event Listeners](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#event-listeners)
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - [Item Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#item-utilities)
 - Title & Message Utilities
