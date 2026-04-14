@@ -1,6 +1,5 @@
 package net.kalbskinder.helpers;
 
-import net.kalbskinder.helpers.regions.RegionManager;
 import org.bukkit.Server;
 import org.junit.After;
 import org.junit.Assert;
@@ -31,7 +30,7 @@ public class InitHelpersTest {
         Assert.assertNotNull(server);
         Assert.assertNotNull(plugin);
 
-        Helpers.initialize();
+        Helpers.initialize(plugin);
 
         Assert.assertNotNull(Helpers.messageHelper);
         Assert.assertNotNull(Helpers.itemHelper);
@@ -42,6 +41,7 @@ public class InitHelpersTest {
         Assert.assertNotNull(Helpers.teleportHelper);
         Assert.assertNotNull(Helpers.titleHelper);
         Assert.assertNotNull(Helpers.playerItemHelper);
+        Assert.assertNotNull(Helpers.eventHelper);
     }
 
 }

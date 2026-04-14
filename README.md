@@ -25,14 +25,14 @@
 <dependency>
     <groupId>net.kalbskinder</groupId>
     <artifactId>pluginwizard-core</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
 ## Adding dependency for Gradle
 
 ```gradle
-implementation("net.kalbskinder:pluginwizard-core:1.2.0")
+implementation("net.kalbskinder:pluginwizard-core:1.3.0")
 ```
 
 ## Enabling PluginWizard-Core in your Plugin
@@ -40,7 +40,7 @@ implementation("net.kalbskinder:pluginwizard-core:1.2.0")
 ```java
 @Override
 public void onEnable() {
-    Helpers.initialize();
+    Helpers.initialize(this);
 }
 ```
 
@@ -49,6 +49,7 @@ public void onEnable() {
 **Features**
 - [Regions](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions)
 - [Creating Commands](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands)
+- [Event Listeners](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#event-listeners)
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - [Item Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#item-utilities)
 - Title & Message Utilities
@@ -107,6 +108,17 @@ commands.add(CommandHelper.create("myplugin").sub("help")
 commandManager.registerCommands(commands); // Register all commands
 ```
 
+## Event Listeners
+
+Easily register event listeners without creating a new class that implements `Listener`
+
+```java
+// Sends a welcome message to players when they join the server ("[+] {playerName} welcome to the server")
+eventHelper.subscribe(PlayerJoinEvent.class, event -> {
+    event.getPlayer().sendMessage(miniMessageHelper.parse("&7[&a+&7] &f%s welcome to the server!".formatted(event.getPlayer().getName())));
+});
+```
+
 ### Location Utilities
 
 This utility makes it easy to convert locations to strings to store them in your database
@@ -121,7 +133,7 @@ String locationString = Helpers.locationHelper.locationToString(location); // co
 Create custom items with custom names and lore.
 
 ```java
-    ItemStack item = itemHelper.newItem()
+ItemStack item = itemHelper.newItem()
         .name("<blue><bold>My Custom Item")
         .material(Material.DIAMOND_SWORD)
         .amount(2)
@@ -130,8 +142,8 @@ Create custom items with custom names and lore.
         .itemFlag(ItemFlag.HIDE_ATTRIBUTES)
         .build();
 
-    // Place the item into the first hotbar slot of a player
-    Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
+// Place the item into the first hotbar slot of a player
+Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
 ```
 
 ### Sprite Utilities
