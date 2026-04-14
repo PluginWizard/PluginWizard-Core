@@ -3,10 +3,13 @@ package net.kalbskinder.helpers;
 import lombok.NoArgsConstructor;
 import net.kalbskinder.helpers.actions.*;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
+import net.kalbskinder.helpers.events.EventHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.Plugin;
 
 @NoArgsConstructor
 public class Helpers {
@@ -19,6 +22,7 @@ public class Helpers {
     public static TitleHelper titleHelper;
     public static LocationHelper locationHelper;
     public static MiniMessageHelper miniMessageHelper;
+    public static EventHelper eventHelper;
 
     // items
     public static ItemHelper itemHelper;
@@ -26,7 +30,8 @@ public class Helpers {
     // regions
     public static RegionHelper regionHelper;
 
-    public static void initialize() {
+    public static void initialize(Plugin plugin) {
+
         RegionManager regionManager = new RegionManager();
         miniMessageHelper = new MiniMessageHelper();
         messageHelper = new MessageHelper(miniMessageHelper);
@@ -37,5 +42,10 @@ public class Helpers {
         itemHelper = new ItemHelper(miniMessageHelper);
         regionHelper = new RegionHelper(regionManager);
         locationHelper = new LocationHelper();
+        eventHelper = new EventHelper(plugin);
+
+        eventHelper.subscribe(PlayerJoinEvent.class, event -> {
+            event.getPlayer().sendMessage(miniMessageHelper.parse("&7[&a+&7] &f%s joined the server".formatted(event.getPlayer().getName())));
+        });
     }
 }

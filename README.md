@@ -40,7 +40,7 @@ implementation("net.kalbskinder:pluginwizard-core:1.2.0")
 ```java
 @Override
 public void onEnable() {
-    Helpers.initialize();
+    Helpers.initialize(this);
 }
 ```
 
@@ -49,6 +49,7 @@ public void onEnable() {
 **Features**
 - [Regions](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#regions)
 - [Creating Commands](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#creating-commands)
+- [Event Listeners](ttps://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#event-listeners)
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - [Item Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#item-utilities)
 - Title & Message Utilities
@@ -105,6 +106,17 @@ commands.add(CommandHelper.create("myplugin").sub("help")
 );
 
 commandManager.registerCommands(commands); // Register all commands
+```
+
+## Event Listeners
+
+Easily register event listeners without creating a new class that implements `Listener`
+
+```java
+// Sends a welcome message to players when they join the server ("[+] {playerName} welcome to the server")
+eventHelper.subscribe(PlayerJoinEvent.class, event -> {
+    event.getPlayer().sendMessage(miniMessageHelper.parse("&7[&a+&7] &f%s welcome to the server!".formatted(event.getPlayer().getName())));
+});
 ```
 
 ### Location Utilities
