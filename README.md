@@ -133,7 +133,7 @@ String locationString = Helpers.locationHelper.locationToString(location); // co
 Create custom items with custom names and lore.
 
 ```java
-    ItemStack item = itemHelper.newItem()
+ItemStack item = itemHelper.newItem()
         .name("<blue><bold>My Custom Item")
         .material(Material.DIAMOND_SWORD)
         .amount(2)
@@ -142,8 +142,8 @@ Create custom items with custom names and lore.
         .itemFlag(ItemFlag.HIDE_ATTRIBUTES)
         .build();
 
-    // Place the item into the first hotbar slot of a player
-    Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
+// Place the item into the first hotbar slot of a player
+Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
 ```
 
 ### Sprite Utilities
