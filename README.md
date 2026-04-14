@@ -25,14 +25,14 @@
 <dependency>
     <groupId>net.kalbskinder</groupId>
     <artifactId>pluginwizard-core</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
 ## Adding dependency for Gradle
 
 ```gradle
-implementation("net.kalbskinder:pluginwizard-core:1.3.0")
+implementation("net.kalbskinder:pluginwizard-core:1.3.1")
 ```
 
 ## Enabling PluginWizard-Core in your Plugin
@@ -58,7 +58,6 @@ public void onEnable() {
 - Sound Utilities
 - Teleportation Utilities
 - Player Inventory Utilities
-- Event Registration (Coming with 1.3.0)
 - Database Utilities (Coming with 1.4.0)
 
 ### Regions
