@@ -25,14 +25,14 @@
 <dependency>
     <groupId>net.kalbskinder</groupId>
     <artifactId>pluginwizard-core</artifactId>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
 </dependency>
 ```
 
 ## Adding dependency for Gradle
 
 ```gradle
-implementation("net.kalbskinder:pluginwizard-core:1.3.1")
+implementation("net.kalbskinder:pluginwizard-core:1.3.2")
 ```
 
 ## Enabling PluginWizard-Core in your Plugin
@@ -113,7 +113,7 @@ Easily register event listeners without creating a new class that implements `Li
 
 ```java
 // Sends a welcome message to players when they join the server ("[+] {playerName} welcome to the server")
-eventHelper.subscribe(PlayerJoinEvent.class, event -> {
+Helpers.eventHelper.subscribe(PlayerJoinEvent.class, event -> {
     event.getPlayer().sendMessage(miniMessageHelper.parse("&7[&a+&7] &f%s welcome to the server!".formatted(event.getPlayer().getName())));
 });
 ```

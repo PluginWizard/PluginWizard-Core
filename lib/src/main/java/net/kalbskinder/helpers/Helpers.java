@@ -43,9 +43,5 @@ public class Helpers {
         regionHelper = new RegionHelper(regionManager);
         locationHelper = new LocationHelper();
         eventHelper = new EventHelper(plugin);
-
-        eventHelper.subscribe(PlayerJoinEvent.class, event -> {
-            event.getPlayer().sendMessage(miniMessageHelper.parse("&7[&a+&7] &f%s joined the server".formatted(event.getPlayer().getName())));
-        });
     }
 }
