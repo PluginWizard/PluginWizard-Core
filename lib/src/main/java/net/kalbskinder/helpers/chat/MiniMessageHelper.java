@@ -26,4 +26,8 @@ public class MiniMessageHelper {
         // Otherwise parse legacy &-codes
         return legacy.deserialize(message);
     }
+
+    public String serialize(Component message) {
+        return miniMessage.serialize(message);
+    }
 }
