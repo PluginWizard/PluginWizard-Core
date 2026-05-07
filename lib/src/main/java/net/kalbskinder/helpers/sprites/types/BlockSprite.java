@@ -1111,7 +1111,11 @@ public enum BlockSprite {
     YELLOW_STAINED_GLASS("block/yellow_stained_glass"),
     YELLOW_STAINED_GLASS_PANE_TOP("block/yellow_stained_glass_pane_top"),
     YELLOW_TERRACOTTA("block/yellow_terracotta"),
-    YELLOW_WOOL("block/yellow_wool");
+    YELLOW_WOOL("block/yellow_wool"),
+
+    // 26.1
+    GOLDEN_DANDELION("block/golden_dandelion"),
+    POTTED_GOLDEN_DANDELION("block/potted_golden_dandelion");
 
     private final String texture;
 
