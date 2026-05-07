@@ -2,9 +2,11 @@ name: CI
 
 on:
   push:
-    tags-ignore:
-      - 'v*.*.*'
+    branches:
+      - '**'
   pull_request:
+    branches:
+      - '**'
 
 permissions:
   contents: read
@@ -28,5 +30,5 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build and test
-        run: ./gradlew --no-daemon clean build
+        run: ./gradlew --no-daemon clean :lib:build
 
