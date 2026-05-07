@@ -1,3 +1,7 @@
+<p align="center">
+    <img width="256" height="256" alt="pluginwizard-core" src="https://github.com/user-attachments/assets/2b81571c-4985-46a7-8be7-9faf5c1218c1" />
+</p>
+
 <h1 align="center">PluginWizard-Core</h1>
 
 <p align="center">
@@ -11,7 +15,6 @@
       <img alt="Javadoc" src="https://javadoc.io/badge2/net.kalbskinder/pluginwizard-core/javadoc.svg" />
     </a>
 </p>
-
 
 <p align="center">
     Collection of Java utility classes that make plugin development easier.<br>
