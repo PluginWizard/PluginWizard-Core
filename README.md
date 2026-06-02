@@ -56,7 +56,6 @@ public void onEnable() {
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - [Item Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#item-utilities)
 - Title & Message Utilities
-- [Sprite Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#sprite-utilities)
 - [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
 - Sound Utilities
 - Teleportation Utilities
@@ -146,16 +145,6 @@ ItemStack item = itemHelper.newItem()
 
 // Place the item into the first hotbar slot of a player
 Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
-```
-
-### Sprite Utilities
-
-Create texts with custom sprites.\
-Supported sprites: [javadoc - helpers.sprites.types](https://javadoc.io/doc/net.kalbskinder/pluginwizard-core/latest/net/kalbskinder/helpers/sprites/types/package-summary.html)
-
-```java
-String text = Sprite.of(BlockSprite.DIAMOND_BLOCK) + " Hello World!";
-Component textComponent =  Sprite.parse(text);
 ```
 
 ### MiniMessage Utilities
