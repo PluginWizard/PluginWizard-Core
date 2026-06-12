@@ -6,6 +6,7 @@ import net.kalbskinder.helpers.chat.MiniMessageHelper;
 import net.kalbskinder.helpers.events.EventHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
+import net.kalbskinder.helpers.math.MathHelper;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
 import org.bukkit.plugin.Plugin;
@@ -29,6 +30,9 @@ public class Helpers {
     // regions
     public static RegionHelper regionHelper;
 
+    // other
+    public static MathHelper mathHelper;
+
     public static void initialize(Plugin plugin) {
 
         RegionManager regionManager = new RegionManager();
@@ -42,5 +46,6 @@ public class Helpers {
         regionHelper = new RegionHelper(regionManager);
         locationHelper = new LocationHelper();
         eventHelper = new EventHelper(plugin);
+        mathHelper = new MathHelper();
     }
 }
