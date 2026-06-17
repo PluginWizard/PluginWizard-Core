@@ -4,6 +4,10 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.jetbrains.annotations.NotNull;
 import org.junit.After;
 import org.junit.Assert;
@@ -61,6 +65,38 @@ public class EventHelperTest {
         Assert.assertFalse(handled.get());
     }
 
+    @Test
+    public void subscribeForEntityRoutesOnlyMatchingEntityId() {
+        World world = server.addSimpleWorld("events");
+        Entity entity = world.spawnEntity(new Location(world, 0, 64, 0), EntityType.ZOMBIE);
+        entity.addScoreboardTag("pluginwizard:id=boss");
+
+        AtomicBoolean handled = new AtomicBoolean(false);
+        eventHelper
+                .forEntity("boss")
+                .on(TestEntityEvent.class, TestEntityEvent::getEntity, event -> handled.set(true));
+
+        server.getPluginManager().callEvent(new TestEntityEvent(entity));
+
+        Assert.assertTrue(handled.get());
+    }
+
+    @Test
+    public void subscribeForEntitySkipsNonMatchingEntityId() {
+        World world = server.addSimpleWorld("events");
+        Entity entity = world.spawnEntity(new Location(world, 0, 64, 0), EntityType.ZOMBIE);
+        entity.addScoreboardTag("pluginwizard:id=other");
+
+        AtomicBoolean handled = new AtomicBoolean(false);
+        eventHelper
+                .forEntity("boss")
+                .on(TestEntityEvent.class, TestEntityEvent::getEntity, event -> handled.set(true));
+
+        server.getPluginManager().callEvent(new TestEntityEvent(entity));
+
+        Assert.assertFalse(handled.get());
+    }
+
     private static final class TestEvent extends Event {
         private static final HandlerList HANDLERS = new HandlerList();
         private final String payload;
@@ -97,6 +133,30 @@ public class EventHelperTest {
         @Override
         public void setCancelled(boolean cancel) {
             this.cancelled = cancel;
+        }
+
+        @NotNull
+        @Override
+        public HandlerList getHandlers() {
+            return HANDLERS;
+        }
+
+        @SuppressWarnings("unused")
+        public static HandlerList getHandlerList() {
+            return HANDLERS;
+        }
+    }
+
+    private static final class TestEntityEvent extends Event {
+        private static final HandlerList HANDLERS = new HandlerList();
+        private final Entity entity;
+
+        private TestEntityEvent(Entity entity) {
+            this.entity = entity;
+        }
+
+        public Entity getEntity() {
+            return entity;
         }
 
         @NotNull
