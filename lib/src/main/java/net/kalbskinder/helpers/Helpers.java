@@ -3,6 +3,7 @@ package net.kalbskinder.helpers;
 import lombok.NoArgsConstructor;
 import net.kalbskinder.helpers.actions.*;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
+import net.kalbskinder.helpers.enitty.EntityHelper;
 import net.kalbskinder.helpers.events.EventHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
@@ -23,18 +24,14 @@ public class Helpers {
     public static LocationHelper locationHelper;
     public static MiniMessageHelper miniMessageHelper;
     public static EventHelper eventHelper;
-
-    // items
+    public static EntityHelper entityHelper;
     public static ItemHelper itemHelper;
-
-    // regions
     public static RegionHelper regionHelper;
 
     // other
     public static MathHelper mathHelper;
 
     public static void initialize(Plugin plugin) {
-
         RegionManager regionManager = new RegionManager();
         miniMessageHelper = new MiniMessageHelper();
         messageHelper = new MessageHelper(miniMessageHelper);
@@ -46,6 +43,8 @@ public class Helpers {
         regionHelper = new RegionHelper(regionManager);
         locationHelper = new LocationHelper();
         eventHelper = new EventHelper(plugin);
+        entityHelper = new EntityHelper();
+
         mathHelper = new MathHelper();
     }
 }
