@@ -10,6 +10,7 @@ public class EntityHelper {
 
     /**
      * Summons an entity with an id in a world
+     *
      * @param entity The entity to be summoned formatted as minecraft:entity
      * @param id A unique id that references the entity for later access
      * @param world The world to summon the entity in
