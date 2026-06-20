@@ -100,7 +100,7 @@ commands.add(CommandHelper.create("mycommand").stringArg("x")
 commands.add(CommandHelper.create("myplugin").sub("help")
     .executes(ctx -> {
         Bukkit.getServer().getOnlinePlayers().forEach(player -> {
-        player.sendMessage(Helpers.miniMessageHelper.parse("Help subcommand executed")) // subcommand code execution
+            player.sendMessage(Helpers.miniMessageHelper.parse("Help subcommand executed")) // subcommand code execution
         });
     }).end()
     .executes(ctx -> {}) // command code execution
@@ -134,7 +134,7 @@ String locationString = Helpers.locationHelper.locationToString(location); // co
 Create custom items with custom names and lore.
 
 ```java
-ItemStack item = itemHelper.newItem()
+ItemStack item = Helpers.itemHelper.newItem()
         .name("<blue><bold>My Custom Item")
         .material(Material.DIAMOND_SWORD)
         .amount(2)
