@@ -19,6 +19,7 @@ public class ItemBuilder {
     private String name;
     private Material material;
     private int amount = 1;
+    private boolean unbreakable = false;
     private final List<ItemEnchantment> enchantments = new ArrayList<>();
     private final List<String> lore = new ArrayList<>();
     private final List<ItemFlag> itemFlags = new ArrayList<>();
@@ -94,6 +95,11 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder setUnbreakable(boolean unbreakable) {
+        this.unbreakable = unbreakable;
+        return this;
+    }
+
     public ItemStack build() {
         if (material == null) {
             throw new IllegalStateException("material is required");
@@ -114,6 +120,8 @@ public class ItemBuilder {
             if (!itemFlags.isEmpty()) {
                 meta.addItemFlags(itemFlags.toArray(new ItemFlag[0]));
             }
+
+            meta.setUnbreakable(unbreakable);
             stack.setItemMeta(meta);
         }
 

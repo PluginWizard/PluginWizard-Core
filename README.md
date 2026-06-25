@@ -139,6 +139,7 @@ ItemStack item = Helpers.itemHelper.newItem()
         .material(Material.DIAMOND_SWORD)
         .amount(2)
         .enchant(Enchantment.UNBREAKING, 3)
+        .setUnbreakable(true)
         .lore(Arrays.asList("line1", null, "line2"))
         .itemFlag(ItemFlag.HIDE_ATTRIBUTES)
         .build();
