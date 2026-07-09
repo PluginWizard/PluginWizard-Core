@@ -28,14 +28,14 @@
 <dependency>
     <groupId>net.kalbskinder</groupId>
     <artifactId>pluginwizard-core</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.1</version>
 </dependency>
 ```
 
 ## Adding dependency for Gradle
 
 ```gradle
-implementation("net.kalbskinder:pluginwizard-core:1.4.0")
+implementation("net.kalbskinder:pluginwizard-core:1.4.1")
 ```
 
 ## Enabling PluginWizard-Core in your Plugin
