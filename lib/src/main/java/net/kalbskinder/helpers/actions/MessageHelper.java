@@ -2,6 +2,7 @@ package net.kalbskinder.helpers.actions;
 
 import lombok.RequiredArgsConstructor;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor
@@ -11,5 +12,9 @@ public class MessageHelper {
     public void sendMessage(Player player, String message) {
         if (player == null || message == null) return;
         player.sendMessage(miniMessageUtils.parse(message));
+    }
+
+    public void sendMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessageUtils.parse(message));
     }
 }
