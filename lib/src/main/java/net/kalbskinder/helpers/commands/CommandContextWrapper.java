@@ -11,6 +11,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jspecify.annotations.Nullable;
 
 public class CommandContextWrapper {
 
@@ -24,33 +25,45 @@ public class CommandContextWrapper {
         return ctx.getSource().getSender();
     }
 
-    public Player getPlayer(String arg) throws CommandSyntaxException {
+    /**
+     * Get the command executor if it was a player
+     * @return The player that executed or null
+     */
+    public @Nullable Player getPlayer() {
+        return (ctx.getSource().getSender() instanceof Player player) ? player : null;
+    }
+
+    public boolean wasExecutedByPlayer() {
+        return ctx.getSource().getSender() instanceof Player;
+    }
+
+    public Player getPlayerArg(String arg) throws CommandSyntaxException {
         return ctx.getArgument(arg, PlayerSelectorArgumentResolver.class)
                 .resolve(ctx.getSource())
                 .getFirst();
     }
 
-    public EntityType getEntity(String arg) {
+    public EntityType getEntityArg(String arg) {
         return getArgument(arg, EntityType.class);
     }
 
-    public ItemStack getItem(String arg) {
+    public ItemStack getItemArg(String arg) {
         return getArgument(arg, ItemStack.class);
     }
 
-    public BlockState getBlock(String arg) {
+    public BlockState getBlockArg(String arg) {
         return getArgument(arg, BlockState.class);
     }
 
-    public World getWorld(String arg) {
+    public World getWorldArg(String arg) {
         return getArgument(arg, World.class);
     }
 
-    public GameMode getGameMode(String arg) {
+    public GameMode getGameModeArg(String arg) {
         return getArgument(arg, GameMode.class);
     }
 
-    public String getColorCode(String arg) {
+    public String getColorCodeArg(String arg) {
         return getArgument(arg, String.class);
     }
 
@@ -58,19 +71,19 @@ public class CommandContextWrapper {
         return getArgument(arg, String.class);
     }
 
-    public String getString(String arg) {
+    public String getStringArg(String arg) {
         return getArgument(arg, String.class);
     }
 
-    public Boolean getBoolean(String arg) {
+    public Boolean getBooleanArg(String arg) {
         return getArgument(arg, Boolean.class);
     }
 
-    public Integer getInt(String arg) {
+    public Integer getIntArg(String arg) {
         return getArgument(arg, Integer.class);
     }
 
-    public Float getFloat(String arg) {
+    public Float getFloatArg(String arg) {
         return getArgument(arg, Float.class);
     }
 
