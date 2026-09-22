@@ -25,7 +25,7 @@ repositories {
     }
 }
 
-def paperVersion = '26.2'
+def paperVersion = '26.3'
 
 dependencies {
     // root dependencies
