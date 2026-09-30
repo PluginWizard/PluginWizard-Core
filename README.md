@@ -106,7 +106,7 @@ commands.add(CommandHelper.create("myplugin").sub("help")
     .executes(ctx -> {}) // command code execution
 );
 
-CommandManager#registerCommands(commands); // Register all commands
+CommandHelper.registerCommands(commands); // Register all commands
 ```
 
 ## Event Listeners

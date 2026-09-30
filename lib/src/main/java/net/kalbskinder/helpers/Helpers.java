@@ -3,6 +3,7 @@ package net.kalbskinder.helpers;
 import lombok.NoArgsConstructor;
 import net.kalbskinder.helpers.actions.*;
 import net.kalbskinder.helpers.chat.MiniMessageHelper;
+import net.kalbskinder.helpers.commands.CommandHelper;
 import net.kalbskinder.helpers.enitty.EntityHelper;
 import net.kalbskinder.helpers.events.EventHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
@@ -46,5 +47,7 @@ public class Helpers {
         entityHelper = new EntityHelper();
 
         mathHelper = new MathHelper();
+
+        CommandHelper.inject(plugin.getLifecycleManager());
     }
 }
