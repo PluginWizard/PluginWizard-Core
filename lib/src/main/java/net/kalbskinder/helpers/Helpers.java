@@ -6,6 +6,7 @@ import net.kalbskinder.helpers.chat.MiniMessageHelper;
 import net.kalbskinder.helpers.commands.CommandHelper;
 import net.kalbskinder.helpers.enitty.EntityHelper;
 import net.kalbskinder.helpers.events.EventHelper;
+import net.kalbskinder.helpers.inventories.GuiHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.math.MathHelper;
@@ -28,6 +29,7 @@ public class Helpers {
     public static EntityHelper entityHelper;
     public static ItemHelper itemHelper;
     public static RegionHelper regionHelper;
+    public static GuiHelper guiHelper;
 
     // other
     public static MathHelper mathHelper;
@@ -45,6 +47,8 @@ public class Helpers {
         locationHelper = new LocationHelper();
         eventHelper = new EventHelper(plugin);
         entityHelper = new EntityHelper();
+        guiHelper = new GuiHelper(miniMessageHelper);
+        guiHelper.registerListeners(eventHelper);
 
         mathHelper = new MathHelper();
 

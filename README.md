@@ -55,12 +55,12 @@ public void onEnable() {
 - [Event Listeners](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#event-listeners)
 - [Location Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#location-utilities)
 - [Item Utilities](https://github.com/PluginWizard/PluginWizard-Core?tab=readme-ov-file#item-utilities)
+- [GUI / Inventory Menus](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#gui--inventory-menus)
 - Title & Message Utilities
 - [MiniMessage Utilities](https://github.com/PluginWizard/PluginWizard-Core/tree/main?tab=readme-ov-file#minimessage-utilities)
 - Sound Utilities
 - Teleportation Utilities
 - Player Inventory Utilities
-- Database Utilities (Coming with 1.5.0)
 
 ### Regions
 
@@ -147,6 +147,40 @@ ItemStack item = Helpers.itemHelper.newItem()
 // Place the item into the first hotbar slot of a player
 Helpers.playerItemHelper.setItem(item, 0, item.getAmount(), player);
 ```
+
+### GUI / Inventory Menus
+
+Build clickable inventory menus without writing your own `InventoryHolder` or click listeners.
+Each slot can carry its own click handler, and a `locked` menu automatically cancels every
+click and drag so players can't take or move the items.
+
+```java
+// A 3-row (27 slot) locked menu. The title is parsed with MiniMessage / legacy &-codes.
+GUI gui = Helpers.guiHelper.createInventory(3, "<dark_gray>My Menu", true);
+
+// Fill the border, then place a clickable button.
+gui.setFrame(Helpers.itemHelper.toItemStack("gray_stained_glass_pane"));
+
+ItemStack button = Helpers.itemHelper.newItem()
+        .name("<green><bold>Click me!")
+        .material(Material.EMERALD)
+        .build();
+
+gui.setItem(13, button, (player, menu, slot, event) -> {
+    // event.getClick() tells a left click from a right / shift click
+    Helpers.messageHelper.sendMessage(player, "<green>You clicked the button!");
+    menu.close(player);
+});
+
+// Runs for any slot without its own handler.
+gui.setFallbackInteraction((player, menu, slot, event) ->
+        Helpers.messageHelper.sendMessage(player, "<gray>Nothing here."));
+
+gui.open(player);
+```
+
+The menu unregisters itself once every viewer has closed it. `createInventory` also accepts an
+`InventoryType` (e.g. `InventoryType.HOPPER`) instead of a row count.
 
 ### MiniMessage Utilities
 
