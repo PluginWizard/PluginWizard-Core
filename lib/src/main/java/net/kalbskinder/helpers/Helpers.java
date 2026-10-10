@@ -10,6 +10,7 @@ import net.kalbskinder.helpers.inventories.GuiHelper;
 import net.kalbskinder.helpers.items.ItemHelper;
 import net.kalbskinder.helpers.location.LocationHelper;
 import net.kalbskinder.helpers.math.MathHelper;
+import net.kalbskinder.helpers.regions.RegionEvents;
 import net.kalbskinder.helpers.regions.RegionHelper;
 import net.kalbskinder.helpers.regions.RegionManager;
 import org.bukkit.plugin.Plugin;
@@ -44,6 +45,7 @@ public class Helpers {
         titleHelper = new TitleHelper(miniMessageHelper);
         itemHelper = new ItemHelper(miniMessageHelper);
         regionHelper = new RegionHelper(regionManager);
+        plugin.getServer().getPluginManager().registerEvents(new RegionEvents(regionManager, plugin), plugin);
         locationHelper = new LocationHelper();
         eventHelper = new EventHelper(plugin);
         entityHelper = new EntityHelper();

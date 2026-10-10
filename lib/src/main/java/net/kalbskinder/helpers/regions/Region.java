@@ -38,6 +38,17 @@ public class Region {
     )); // Default flags for a region
 
 
+    /** Whether the location is inside this region. Both corners are inclusive block coordinates. */
+    public boolean contains(Location location) {
+        if (!Objects.equals(location.getWorld(), loc1.getWorld())) return false;
+        int x = location.getBlockX();
+        int y = location.getBlockY();
+        int z = location.getBlockZ();
+        return x >= Math.min(loc1.getBlockX(), loc2.getBlockX()) && x <= Math.max(loc1.getBlockX(), loc2.getBlockX()) &&
+               y >= Math.min(loc1.getBlockY(), loc2.getBlockY()) && y <= Math.max(loc1.getBlockY(), loc2.getBlockY()) &&
+               z >= Math.min(loc1.getBlockZ(), loc2.getBlockZ()) && z <= Math.max(loc1.getBlockZ(), loc2.getBlockZ());
+    }
+
     public boolean containsPlayer(UUID playerUuid) {
         return players.containsKey(playerUuid);
     }
