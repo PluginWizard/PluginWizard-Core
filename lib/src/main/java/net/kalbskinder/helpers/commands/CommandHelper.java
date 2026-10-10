@@ -32,9 +32,9 @@ public class CommandHelper extends ArgumentBuilder<CommandHelper> {
         return builder.build();
     }
 
-    public void register(CommandHelper command) {
+    public void register() {
         lifecycleManager.registerEventHandler(LifecycleEvents.COMMANDS, commands -> {
-            commands.registrar().register(command.build());
+            commands.registrar().register(this.build());
         });
     }
 }
